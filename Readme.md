@@ -27,3 +27,13 @@ git clone {{ git repository }} {{ working project folder }}
 ```
 yarn
 ```
+
+## Technologies Used
+
+1. React.JS
+1. Tailwind CSS
+1. Vite.JS
+1. GraphQL
+1. Node.JS
+1. Express
+1. Mongoose
