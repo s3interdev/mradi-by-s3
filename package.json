@@ -1,0 +1,8 @@
+{
+	"name": "mradi-by-s3",
+	"private": true,
+	"version": "1.0.0",
+	"workspaces": [
+		"packages/*"
+	]
+}
