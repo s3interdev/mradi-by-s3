@@ -1,10 +1,12 @@
-// const { projects, clients } = require('../data/sampleData.js');
-
 const { GraphQLObjectType, GraphQLSchema, GraphQLID, GraphQLString, GraphQLList, GraphQLNonNull } = require('graphql');
 
-/** mongooose models */
+/** mongoose models */
 const Project = require('../models/Project');
 const Client = require('../models/Client');
+
+/** sample data
+ *  const { projects, clients } = require('../data/sampleData.js');
+ */
 
 /** project type */
 const ProjectType = new GraphQLObjectType({
@@ -76,7 +78,25 @@ const mutation = new GraphQLObjectType({
 			type: ClientType,
 			args: {
 				name: { type: GraphQLNonNull(GraphQLString) },
+				email: { type: GraphQLNonNull(GraphQLString) },
+				phone: { type: GraphQLNonNull(GraphQLString) },
 			},
+			resolve(parent, args) {
+				const client = new Client({
+					name: args.name,
+					email: args.email,
+					phone: args.phone,
+				});
+
+				return client.save();
+			},
+		},
+
+		/** delete client */
+		deleteClient: {
+			type: ClientType,
+			args: { id: { type: GraphQLNonNull(GraphQLID) } },
+			resolve(parent, args) {},
 		},
 	},
 });
