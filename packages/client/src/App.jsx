@@ -25,7 +25,10 @@ const cache = new InMemoryCache({
 });
 
 const client = new ApolloClient({
-	uri: 'http://localhost:5000/graphql',
+	uri:
+		process.env.NODE_ENV === 'production'
+			? 'https://mradi-be.s3.co.ke/graphql'
+			: 'http://localhost:5000/graphql',
 	cache: cache,
 });
 
