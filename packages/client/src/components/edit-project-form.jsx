@@ -12,7 +12,7 @@ const EditProjectForm = ({ project }) => {
 				return 'new';
 			case 'Active':
 				return 'progress';
-			case 'Progress':
+			case 'Complete':
 				return 'complete';
 			default:
 				throw new Error(`Unknown status: ${project.status}`);
