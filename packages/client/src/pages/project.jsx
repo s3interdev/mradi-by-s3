@@ -17,7 +17,7 @@ const Project = () => {
 	return (
 		<>
 			{!loading && !error && (
-				<div className="w-75 card mx-auto p-5">
+				<div className="w-75 card mx-auto p-5 mb-5">
 					<Link to="/" className="btn btn-light btn-sm w-25 d-inline ms-auto">
 						Back
 					</Link>

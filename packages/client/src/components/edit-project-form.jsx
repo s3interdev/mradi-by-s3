@@ -51,6 +51,7 @@ const EditProjectForm = ({ project }) => {
 				<div className="mb-3">
 					<label className="form-label">Description</label>
 					<textarea
+						rows="5"
 						className="form-control"
 						id="description"
 						value={description}
