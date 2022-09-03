@@ -1,10 +1,13 @@
-import React from 'react';
+import Header from './components/header';
 
 const App = () => {
 	return (
-		<h1 className="p-8 text-center text-4xl font-bold text-indigo-800">
-			Your settings are well configured
-		</h1>
+		<>
+			<Header />
+			<div className="container">
+				<h1>Your settings are well configured</h1>
+			</div>
+		</>
 	);
 };
 
